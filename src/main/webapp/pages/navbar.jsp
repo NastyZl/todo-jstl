@@ -22,7 +22,7 @@
         <nav class="nav">
                 <c:choose>
                     <c:when test="${user != null}">
-                        <div>
+                        <div class="url" id="left">
                             <ul class="menu">
                                 <li class="nav-items">
                                     <a href="#" class="nav-link">Профиль</a>
@@ -32,16 +32,16 @@
                                 </li>
                             </ul>
                         </div>
-                        <div><a class="logo">
-                            <img src="images/logo.svg" alt="логотип" class="logo-img">
-                        </a></div>
                     </c:when>
                     <c:otherwise>
-                        Добро пожаловать!
+                        <div class="url" id="left"></div>
                     </c:otherwise>
                 </c:choose>
-            <div>
-                <a href="#" class="nav-link">Выйти</a>
+            <div class="logo">
+                <img src="images/logo.svg" alt="логотип" class="logo-img">
+            </div>
+            <div class="url" id="right">
+                <a href="/logout" class="nav-items">Выйти</a>
             </div>
 
         </nav>

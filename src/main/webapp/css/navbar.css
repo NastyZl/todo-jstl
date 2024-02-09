@@ -15,6 +15,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align-last: right;
+}
+/*.logo {*/
+/*    margin: 0 auto;*/
+/*}*/
+.url {
+    flex: 1;
 }
 
 .menu{
