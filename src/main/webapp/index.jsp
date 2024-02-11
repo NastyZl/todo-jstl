@@ -6,6 +6,6 @@
     <title>Welcome page!</title>
 </head>
 <body>
-    <c:redirect url="/users"/>
+    <c:redirect url="/login"/>
 </body>
 </html>

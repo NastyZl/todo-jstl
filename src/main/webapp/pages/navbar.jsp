@@ -21,29 +21,41 @@
     <div class="container">
         <nav class="nav">
                 <c:choose>
-                    <c:when test="${user != null}">
+                    <c:when test="${user.role == 'USER'}">
                         <div class="url" id="left">
                             <ul class="menu">
                                 <li class="nav-items">
-                                    <a href="#" class="nav-link">Профиль</a>
-                                </li>
-                                <li class="nav-items">
-                                    <a href="#" class="nav-link">Список дел</a>
+                                    <a href="/profile?id=${user.id}" class="nav-link">Профиль</a>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="logo"><img src="images/logo.svg" alt="логотип" class="logo-img"></div>
+                        <div class="url" id="right">
+                            <a href="/logout" class="nav-items">Выйти</a>
+                        </div>
+                    </c:when>
+                    <c:when test="${user.role == 'ADMIN'}">
+                        <div class="url" id="left">
+                            <ul class="menu">
+                                <li class="nav-items">
+                                    <a href="/users" class="nav-link">Список пользователей</a>
+                                </li>
+                                <li class="nav-items">
+                                    <a href="/registr" class="nav-link">Создать пользователя</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo"><img src="images/logo.svg" alt="логотип" class="logo-img"></div>
+                        <div class="url" id="right">
+                            <a href="/logout" class="nav-items">Выйти</a>
                         </div>
                     </c:when>
                     <c:otherwise>
                         <div class="url" id="left"></div>
+                        <div class="logo"><img src="images/logo.svg" alt="логотип" class="logo-img"></div>
+                        <div class="url" id="right"></div>
                     </c:otherwise>
                 </c:choose>
-            <div class="logo">
-                <img src="images/logo.svg" alt="логотип" class="logo-img">
-            </div>
-            <div class="url" id="right">
-                <a href="/logout" class="nav-items">Выйти</a>
-            </div>
-
         </nav>
     </div>
 </header>

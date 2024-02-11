@@ -11,4 +11,8 @@ public interface UserRepo {
     Optional<User> findByLogin(String login);
 
     boolean create(User user);
+
+    Optional<User> findById(String id);
+
+    int nextId();
 }

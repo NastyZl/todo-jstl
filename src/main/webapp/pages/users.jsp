@@ -3,31 +3,38 @@
 <html>
 <head>
     <title>Пользователи</title>
+    <style>
+        <%@include file="../css/style.css"%>
+        <%@include file="../css/users.css"%>
+    </style>
 </head>
 <body>
 <%@include file="navbar.jsp" %>
 
 <div>
     <div class="container">
-        <h1>Список пользователей</h1>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>login</th>
-                <th>password</th>
-            </tr>
+        <table class="table">
+            <thred>
+                <tr>
+                    <th>id</th>
+                    <th>login</th>
+                    <th>birthday</th>
+                    <th>role</th>
+                    <th></th>
+                </tr>
+            </thred>
             <c:forEach items="${users}" var="user">
+            <tbody>
                 <tr>
                     <td>${user.id}</td>
                     <td>${user.login}</td>
-                    <td>${user.password}</td>
+                    <td>${user.birthday}</td>
+                    <td>${user.role}</td>
+                    <td><a href="/profile?id=${user.id}">show page</a></td>
                 </tr>
+            </tbody>
             </c:forEach>
         </table>
-        <form action="users" method="post">
-            <input type="text" name="login">
-            <button type="submit">OK!</button>
-        </form>
     </div>
 </div>
 </body>
